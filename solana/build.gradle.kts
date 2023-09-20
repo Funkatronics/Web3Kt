@@ -4,7 +4,8 @@ plugins {
     id("com.vanniktech.maven.publish")
 }
 
-val artifactId: String by project
+val baseArtifactId: String by project
+val artifactId: String = "$baseArtifactId-solana"
 
 kotlin {
     jvm {
