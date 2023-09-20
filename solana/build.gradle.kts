@@ -5,6 +5,7 @@ plugins {
 }
 
 val artifactId: String by project
+val moduleArtifactId = "$artifactId-solana"
 
 kotlin {
     jvm {
@@ -36,12 +37,14 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-//                implementation("io.github.funkatronics:kborsh:0.1.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+                implementation("com.diglol.crypto:pkc:0.1.5")
+                implementation("io.github.funkatronics:rpccore:0.2.0")
             }
         }
     }
 }
 
 mavenPublishing {
-    coordinates(group as String, artifactId, version as String)
+    coordinates(group as String, moduleArtifactId, version as String)
 }
