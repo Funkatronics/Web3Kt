@@ -23,14 +23,14 @@ kotlin {
         macosArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = artifactId
+            baseName = moduleArtifactId
         }
     }
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(project(mapOf("path" to ":core")))
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0-RC")
-                implementation(project(mapOf("path" to ":core")))
                 implementation("io.github.funkatronics:multimult:0.2.0")
             }
         }
