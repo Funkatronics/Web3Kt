@@ -1,3 +1,6 @@
+# DEPRECATED
+This library has been moved to https://github.com/solana-mobile/web3-core
+
 # Web3Kt
 Multiplatform Web3 Library
 
